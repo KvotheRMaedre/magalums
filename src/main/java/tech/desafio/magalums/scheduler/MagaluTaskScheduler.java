@@ -22,7 +22,7 @@ public class MagaluTaskScheduler {
     @Scheduled(fixedDelay = 1, timeUnit = TimeUnit.MINUTES)
     public void checkTask(){
         var dateTime = LocalDateTime.now();
-        logger.info("Running at {}", dateTime);
+        logger.info("checkTask() - Running at {}", dateTime);
         notificationService.checkAndSend(dateTime);
     }
 }
